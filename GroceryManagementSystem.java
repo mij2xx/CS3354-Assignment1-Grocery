@@ -24,4 +24,24 @@ public class GroceryManagementSystem {
             }
         }
     }
+
+    /**
+     * Adds stock to an existing grocery item.
+     *
+     * @param names the names of the grocery items
+     * @param stocks the stock quantities of the grocery items
+     * @param target the name of the item to restock
+     * @param amount the amount of stock to add
+     */
+    public static void restockItem(String[] names, int[] stocks, String target, int amount) {
+        for (int i = 0; i < names.length; i++) {
+            if (names[i] != null && names[i].equalsIgnoreCase(target)) {
+                stocks[i] += amount;
+                System.out.println("Restocked " + names[i] + ".");
+                return;
+            }
+        }
+
+        System.out.println("Item not found.");
+    }
 }
